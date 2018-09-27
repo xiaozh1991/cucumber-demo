@@ -1,0 +1,25 @@
+plugins {
+    id 'java'
+}
+
+group 'org.zero.example'
+version '1.0-SNAPSHOT'
+
+sourceCompatibility = 1.8
+
+repositories {
+    mavenCentral()
+}
+
+configurations {
+    cucumberRuntime{
+        extendsFrom testRuntime
+    }
+}
+
+dependencies {
+    testCompile group: 'junit', name: 'junit', version: '4.12'
+    testCompile 'io.cucumber:cucumber-java8:3.0.2'
+    testCompile 'io.cucumber:cucumber-junit:3.0.2'
+}
+
